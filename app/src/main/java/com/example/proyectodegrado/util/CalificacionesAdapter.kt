@@ -38,9 +38,21 @@ class CalificacionesAdapter(private val listaCalificaciones: Array<CalificacionI
     }
 
     override fun onBindViewHolder(holder: RubricaCalificacionesViewHolder, position: Int) {
-        holder.puntaje.text = listaCalificaciones[position].puntaje.toString()
-        holder.nombreCriterio.text = listaCalificaciones[position].titulo
-        holder.descripcionCriterio.text = listaCalificaciones[position].descripcion
+        val actual = listaCalificaciones[position]
+
+        if(actual.puntaje == -1){
+            holder.puntaje.text = "X"
+        } else {
+            holder.puntaje.text = actual.puntaje.toString()
+        }
+
+        holder.nombreCriterio.text = actual.titulo
+
+        if(actual.descripcion.isBlank()){
+            holder.descripcionCriterio.visibility = View.GONE
+        } else {
+            holder.descripcionCriterio.text = listaCalificaciones[position].descripcion
+        }
     }
 
     override fun getItemCount(): Int {
