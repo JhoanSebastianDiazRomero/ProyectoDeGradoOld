@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="clicked">#8073F0E9</color>
+    <color name="colorPrimary">#FF1C958E</color>
+    <color name="main_dark">#FF0E6762</color>
+    <color name="main_medium">#FF1D958E</color>
+    <color name="main_light">#FF47D3CB</color>
+    <color name="border_light">#FFB5B5B5</color>
+    <color name="border_dark">#FF000000</color>
+    <color name="border_colored">#FF1C958E</color>
+    <color name="border_colored_red">#FFA30E0E</color>
+    <color name="border_colored_yellow">#FFE8BA18</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

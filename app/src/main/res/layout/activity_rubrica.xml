@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RubricaActivity">
+
+    <!-- header -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_rubrica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/decoracion_rubrica"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/header_rubrica"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/foto_estudiante"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:padding="2dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+            app:strokeColor="@color/border_light"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/nombre_estudiante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingLeft="7dp"
+            android:text="Estudiante"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/decoracion_rubrica"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/estudiantes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintRight_toLeftOf="@id/foto_estudiante"
+            app:layout_constraintLeft_toRightOf="@id/decoracion_rubrica"
+            app:layout_constraintTop_toBottomOf="@id/nombre_estudiante" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cuerpo_rubrica"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_rubrica">
+
+        <!-- Criterios -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/criterios_rubrica"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".6"
+            app:layout_constraintTop_toTopOf="@id/cuerpo_rubrica"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/comentario_rubrica"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".30"
+                app:layout_constraintBottom_toTopOf="@id/lista_criterios">
+
+                <Button
+                    android:id="@+id/comentario_general_rubrica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comentario general"
+                    android:backgroundTint="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_patologias"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    app:strokeColor="@color/border_colored_yellow"
+                    android:backgroundTint="@color/white"
+                    android:text="Procedimientos"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    app:strokeWidth="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/comentario_general_rubrica"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_procedimientos"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_procedimientos"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    app:strokeColor="@color/border_colored_red"
+                    android:backgroundTint="@color/white"
+                    android:text="Patologias"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    app:strokeWidth="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/comentario_general_rubrica"
+                    app:layout_constraintLeft_toRightOf="@id/btn_patologias"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lista_criterios"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/divider"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/comentario_rubrica"
+                tools:listitem="@layout/card_criterio" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="25dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Calificacion -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_calificaciones"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/criterios_rubrica"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/card_calificacion"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
